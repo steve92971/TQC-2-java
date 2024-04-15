@@ -1,0 +1,26 @@
+/*
+210 最大公因最小公倍
+撰寫一程式，讓使用者輸入兩個正整數a、b，分別輸出a、b的最大公因數和最小公倍數。
+
+提示：若使用 Java 語言答題，請以「JP」開頭命名包含 main 靜態方法的 class，評測系統才能正確評分。
+*/
+ 
+import java.util.Scanner;
+
+public class JP {
+
+    static Scanner scn=new Scanner(System.in);
+    public static void main(String[] args){
+        int a=scn.nextInt();
+        int b=scn.nextInt();
+        int a1=a,b1=b;//先儲存兩數
+        int tmp=0;
+        while (a%b!=0) {//注意用while
+            tmp=b;//注意tmp=
+            b=a%b;
+            a=tmp;//注意a=
+        }
+        System.out.println(b);//最大公因數
+        System.out.println(a1*b1/b);//最小公倍數=兩數的乘積/最大公因數
+    }
+}
